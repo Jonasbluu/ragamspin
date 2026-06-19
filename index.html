@@ -1,655 +1,1279 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>RAGAM4D SPIN FREEBET</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap');
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-  :root{
-  --bg-dark:#07020F;
-  --bg-purple:#12041F;
-  --purple:#8A2BE2;
-  --purple-light:#C77DFF;
-  --blue:#00A8FF;
-  --blue2:#4CC9F0;
-  --gold:#FFB300;
-  --gold2:#FF7B00;
-  --white:#F5F7FF;
+  <title>RAGAM4D FREECHIP</title>
 
-  --radius:28px;
-  --shadow-blue:
-      0 0 20px rgba(0,168,255,.4),
-      0 0 50px rgba(0,168,255,.2);
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  --shadow-gold:
-      0 0 20px rgba(255,179,0,.4),
-      0 0 50px rgba(255,179,0,.2);
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <style>
+ import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* ===========================
+   ROOT
+=========================== */
+
+:root{
+  --bg:#05010a;
+  --bg2:#12041f;
+
+  --purple:#8a2be2;
+  --purple2:#c77dff;
+
+  --blue:#00a8ff;
+  --blue2:#4cc9f0;
+
+  --gold:#ffb300;
+  --orange:#ff7b00;
+
+  --white:#f5f7ff;
 
   --glass:
-      rgba(18,4,31,.55);
+    rgba(18,4,31,.55);
+
+  --border:
+    rgba(255,255,255,.12);
+
+  --shadowPurple:
+    0 0 25px rgba(138,43,226,.45);
+
+  --shadowBlue:
+    0 0 25px rgba(0,168,255,.45);
+
+  --shadowGold:
+    0 0 25px rgba(255,179,0,.45);
+
+  --radius:35px;
 }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* ===========================
+   RESET
+=========================== */
 
-  body{
-  font-family:'Rajdhani',sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body{
+  overflow-x:hidden;
+}
+
+body{
   min-height:100vh;
   color:var(--white);
-  overflow-x:hidden;
+  font-family:'Rajdhani',sans-serif;
+
   background:
-      linear-gradient(
-        180deg,
-        rgba(7,2,15,.85),
-        rgba(18,4,31,.92)
-      ),
-      url('./assets/bg-space.webp')
-      center/cover no-repeat fixed;
+  radial-gradient(
+    circle at top,
+    rgba(138,43,226,.35),
+    transparent 40%
+  ),
+
+  radial-gradient(
+    circle at bottom,
+    rgba(0,168,255,.25),
+    transparent 45%
+  ),
+
+  linear-gradient(
+    180deg,
+    #05010a,
+    #12041f
+  );
+
+  position:relative;
 }
 
-  body::before{
-  content:'';
+/* ===========================
+   STARS
+=========================== */
+
+.stars,
+.stars2,
+.stars3{
   position:fixed;
   inset:0;
-  background:
-      radial-gradient(
-        circle at top,
-        rgba(138,43,226,.30),
-        transparent 45%
-      ),
-      radial-gradient(
-        circle at bottom,
-        rgba(0,168,255,.25),
-        transparent 45%
-      );
-  z-index:0;
+  pointer-events:none;
 }
 
-  .container{
-  width:min(95%,1200px);
+.stars{
+  background:
+  radial-gradient(
+    white 1px,
+    transparent 1px
+  );
+
+  background-size:
+  80px 80px;
+
+  opacity:.25;
+}
+
+.stars2{
+  background:
+  radial-gradient(
+    white 1.5px,
+    transparent 1.5px
+  );
+
+  background-size:
+  130px 130px;
+
+  opacity:.15;
+}
+
+.stars3{
+  background:
+  radial-gradient(
+    white 2px,
+    transparent 2px
+  );
+
+  background-size:
+  200px 200px;
+
+  opacity:.08;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+  width:min(95%,1400px);
   margin:auto;
   padding:
-      clamp(20px,4vw,40px);
+  40px 20px
+  80px;
   position:relative;
-  z-index:2;
+  z-index:5;
 }
 
-  /* ===== ANIMASI JUDUL PINK ===== */
-  @keyframes pinkGlow {
-    0%   { color: #ffffff; text-shadow: 0 0 10px #ffffff, 0 0 30px #ffffff; }
-    25%  { color: #ffffff; text-shadow: 0 0 20px #ffffff, 0 0 50px #ffffff; }
-    75%  { color: #fae452; text-shadow: 0 0 25px #fae452, 0 0 60px #ffffff; }
-    100% { color: #ffffff; text-shadow: 0 0 10px #ffffff, 0 0 30px #ffffff; }
-  }
+/* ===========================
+   HERO
+=========================== */
 
-  @keyframes floatTitle {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-5px); }
-  }
+.hero{
+  text-align:center;
+  margin-bottom:45px;
+}
 
-  .header{
+.logo-title{
   font-family:'Orbitron';
-  font-size:
-      clamp(35px,6vw,72px);
-
   font-weight:900;
 
-  background:
-      linear-gradient(
-        90deg,
-        var(--blue),
-        var(--white),
-        var(--gold)
-      );
+  font-size:
+  clamp(
+    40px,
+    7vw,
+    90px
+  );
 
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-
-  text-shadow:
-      0 0 40px rgba(0,168,255,.4);
-
-  margin-bottom:15px;
+  line-height:1.1;
 }
 
- .subheader{
-  font-size:
-      clamp(18px,2vw,26px);
+.logo-title span{
+  display:block;
 
-  color:#d8d8ff;
+  background:
+  linear-gradient(
+    90deg,
+    var(--blue),
+    white,
+    var(--gold)
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:
+  transparent;
+
+  text-shadow:
+  0 0 35px
+  rgba(0,168,255,.45);
+}
+
+.hero-subtitle{
+  margin-top:15px;
+
+  font-size:
+  clamp(
+    16px,
+    2vw,
+    24px
+  );
+
+  letter-spacing:2px;
 
   opacity:.9;
 }
 
-  /* ===== KOTAK INPUT ===== */
-  .input-section{
-  background:
-      rgba(18,4,31,.55);
+/* ===========================
+   ASTRONAUT
+=========================== */
 
-  border:
-      1px solid
-      rgba(255,255,255,.15);
-
-  border-radius:32px;
-
-  backdrop-filter:
-      blur(20px);
-
-  box-shadow:
-      0 0 50px
-      rgba(138,43,226,.25);
-
-  padding:35px;
+.astronaut-box{
+  margin-top:40px;
 }
 
-  .input-label {
-    font-size: 12px;
-    letter-spacing: 5px;
-    color: #ffffff;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    display: block;
-  }
+.astronaut{
+  width:
+  min(
+    100%,
+    420px
+  );
 
-  .input-row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
+  animation:
+  astronautFloat
+  5s
+  ease-in-out
+  infinite;
 
-  #userid {
-    flex: 1;
-    padding: 12px 16px;
-    border-radius: 10px;
-    border: 1.5px solid #ffffff;
-    background: rgba(0, 0, 0, 0.1);
-    color: #ffffff;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    outline: none;
-    transition: border-color 0.5s;
-  }
-
-  #userid:focus {
-    border-color: #ffffff;
-    box-shadow: 0 0 12px #ffffff;
-  }
-
-  #userid::placeholder { color: rgba(235,235,235,0.25); }
-
-  .clear-btn {
-    padding: 12px 16px;
-    border-radius: 10px;
-    border: 1.5px solid #ffffff;
-    background: rgba(225,225,225,0.15);
-    color: #ffffff;
-    font-size: 13px;
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-    letter-spacing: 1px;
-    transition: all 0.2s;
-    white-space: nowrap;
-  }
-
-  .clear-btn:hover {
-    background: rgba(255,45,120,0.3);
-    color: #fff;
-  }
-
-  /* ===== KOTAK RODA ===== */
-  .wheel-section{
-  background:
-      rgba(18,4,31,.55);
-
-  border:
-      1px solid
-      rgba(255,255,255,.15);
-
-  border-radius:40px;
-
-  padding:35px;
-
-  backdrop-filter:blur(20px);
-
-  box-shadow:
-      0 0 70px
-      rgba(0,168,255,.15);
+  filter:
+  drop-shadow(
+    0 0 20px
+    rgba(138,43,226,.7)
+  )
+  drop-shadow(
+    0 0 60px
+    rgba(0,168,255,.4)
+  );
 }
 
-  .wheel-label {
-    font-size: 17px;
-    letter-spacing: 5px;
-    color: #fae452;
-    text-transform: uppercase;
-    margin-bottom: 38px;
-    opacity: 10;
+@keyframes astronautFloat{
+
+  0%{
+    transform:
+    translateY(0);
   }
 
-  #wheelBox {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
+  50%{
+    transform:
+    translateY(-15px);
   }
 
-  #pointer {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -20px;
-    width: 0;
-    height: 0;
-    border-left: 14px solid transparent;
-    border-right: 14px solid transparent;
-    border-top: 30px solid #fae452;
-    z-index: 10;
-    filter: drop-shadow(0 0 5px #0a0a0a);
+  100%{
+    transform:
+    translateY(0);
   }
-
- #wheel{
-  border-radius:50%;
-  box-shadow:
-      0 0 30px rgba(0,168,255,.4),
-      0 0 70px rgba(138,43,226,.4);
 }
 
-  /* ===== TOMBOL SPIN ===== */
-  @keyframes pulseGold {
-     50%       { box-shadow: 0 0 15px #fae452, 0 0 30px rgba(255,215,0,0.3); }
-  }
+/* ===========================
+   MULTIPLIER
+=========================== */
 
- .spin-btn{
-  width:100%;
-  padding:18px;
+.multi{
+  position:fixed;
 
-  border:none;
+  z-index:2;
+
+  padding:
+  12px
+  20px;
+
   border-radius:18px;
 
   background:
-      linear-gradient(
-        90deg,
-        #ff7b00,
-        #ffb300
-      );
+  linear-gradient(
+    90deg,
+    var(--orange),
+    var(--gold)
+  );
 
-  color:#fff;
+  color:white;
 
-  font-size:18px;
+  font-family:
+  'Orbitron';
+
   font-weight:700;
-  letter-spacing:3px;
 
   box-shadow:
-      0 0 25px
-      rgba(255,179,0,.45);
+  0 0 20px
+  rgba(255,179,0,.7);
 
-  transition:.3s;
+  animation:
+  multiFloat
+  4s
+  ease-in-out
+  infinite;
 }
 
-.spin-btn:hover{
-  transform:
-      translateY(-4px)
-      scale(1.02);
+.x50{
+  left:5%;
+  top:70%;
 }
 
-  /* ===== POPUP ===== */
-  #popup {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0; left: 0;
-    background: rgba(0,0,0,0.88);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+.x100{
+  left:12%;
+  top:30%;
+}
+
+.x250{
+  right:12%;
+  top:22%;
+}
+
+.x500{
+  right:6%;
+  top:70%;
+}
+
+.x1000{
+  right:15%;
+  top:50%;
+}
+
+@keyframes multiFloat{
+
+  0%{
+    transform:
+    translateY(0);
   }
 
-  @keyframes popIn {
-    0%   { transform: scale(0.5); opacity: 0; }
-    70%  { transform: scale(1.07); opacity: 1; }
-    100% { transform: scale(1); }
+  50%{
+    transform:
+    translateY(-12px);
   }
 
-  .popup-box {
-    background: linear-gradient(160deg, #160010, #0a0020);
-    padding: 32px 28px;
-    border-radius: 20px;
-    border: 2px solid var(--gold);
-    box-shadow: 0 0 40px rgba(255,215,0,0.5), inset 0 0 30px rgba(255,215,0,0.05);
-    max-width: 320px;
-    width: 90%;
-    animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  100%{
+    transform:
+    translateY(0);
   }
+}
 
-  .popup-icon {
-    font-size: 48px;
-    display: block;
-    margin-bottom: 10px;
-  }
+/* ===========================
+   CONTENT
+=========================== */
 
-  .popup-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
-    letter-spacing: 3px;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-
-  #resultText {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
-    font-weight: 900;
-    color: #fff;
-    text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff;
-    margin-bottom: 8px;
-    animation: #ffffff
-  }
-
-  .popup-sub {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-  }
-
-  .claim-btn {
-    width: 100%;
-    padding: 13px 25px;
-    background: linear-gradient(135deg, #ffd700, #ffaa00);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #ffffff;
-    transition: transform 0.15s;
-  }
-  @media (min-width:768px){
-
-.container{
+.content-grid{
   display:grid;
-  grid-template-columns:
-      400px 1fr;
   gap:35px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+  background:
+  rgba(18,4,31,.55);
+
+  border:
+  1px solid
+  rgba(255,255,255,.12);
+
+  backdrop-filter:
+  blur(25px);
+
+  border-radius:
+  var(--radius);
+
+  padding:
+  35px;
+
+  box-shadow:
+  0 0 40px
+  rgba(138,43,226,.18);
+}
+
+.card h3{
+  text-align:center;
+
+  font-family:
+  'Orbitron';
+
+  font-size:
+  22px;
+
+  margin-bottom:
+  30px;
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+.input-row{
+  display:flex;
+  gap:15px;
+}
+
+#userid{
+  flex:1;
+
+  height:60px;
+
+  border:none;
+
+  border-radius:
+  18px;
+
+  padding:
+  0 20px;
+
+  background:
+  rgba(255,255,255,.08);
+
+  color:white;
+
+  outline:none;
+
+  font-size:18px;
+}
+
+#userid::placeholder{
+  color:
+  rgba(255,255,255,.4);
+}
+
+.clear-btn{
+  border:none;
+
+  padding:
+  0 25px;
+
+  border-radius:
+  18px;
+
+  background:
+  linear-gradient(
+    90deg,
+    var(--purple),
+    var(--blue)
+  );
+
+  color:white;
+
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+/* ===========================
+   WHEEL
+=========================== */
+
+#wheelBox{
+  position:relative;
+
+  width:
+  min(
+    100%,
+    500px
+  );
+
+  margin:auto;
+}
+
+#wheel{
+  width:100%;
+  height:auto;
+
+  border-radius:50%;
+
+  box-shadow:
+  0 0 40px
+  rgba(0,168,255,.4),
+  0 0 80px
+  rgba(138,43,226,.3);
+}
+
+#pointer{
+  position:absolute;
+
+  left:50%;
+  top:-25px;
+
+  transform:
+  translateX(-50%);
+
+  width:0;
+  height:0;
+
+  border-left:
+  20px solid transparent;
+
+  border-right:
+  20px solid transparent;
+
+  border-top:
+  40px solid
+  var(--gold);
+
+  z-index:10;
+}
+
+.spin-btn{
+  width:100%;
+
+  height:65px;
+
+  border:none;
+
+  margin-top:35px;
+
+  border-radius:
+  18px;
+
+  background:
+  linear-gradient(
+    90deg,
+    var(--orange),
+    var(--gold)
+  );
+
+  color:white;
+
+  font-family:
+  'Orbitron';
+
+  font-size:18px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  box-shadow:
+  0 0 30px
+  rgba(255,179,0,.5);
+}
+
+/* ===========================
+   POPUP
+=========================== */
+
+#popup{
+  display:none;
+
+  position:fixed;
+  inset:0;
+
+  background:
+  rgba(0,0,0,.82);
+
+  justify-content:center;
   align-items:center;
+
+  z-index:999;
 }
 
-.input-section{
-  order:1;
+.popup-box{
+  width:
+  min(
+    90%,
+    420px
+  );
+
+  background:
+  rgba(18,4,31,.9);
+
+  border:
+  1px solid
+  rgba(255,255,255,.12);
+
+  border-radius:
+  30px;
+
+  padding:
+  40px;
+
+  text-align:center;
+
+  box-shadow:
+  0 0 35px
+  rgba(0,168,255,.35),
+  0 0 80px
+  rgba(138,43,226,.25);
 }
 
-.wheel-section{
-  order:2;
-}
+.popup-title{
+  font-size:26px;
+  font-weight:700;
 }
 
-@media (min-width:1200px){
-
-.container{
-  grid-template-columns:
-      450px
-      650px;
+.popup-sub{
+  margin-top:15px;
+  opacity:.8;
 }
-  .claim-btn:hover { transform: scale(1.04); }
-  
+
+#resultText{
+  font-size:45px;
+  font-weight:900;
+  margin:25px 0;
+
+  color:
+  var(--gold);
+}
+
+.claim-btn{
+  width:100%;
+  height:60px;
+
+  border:none;
+
+  border-radius:
+  18px;
+
+  background:
+  linear-gradient(
+    90deg,
+    var(--orange),
+    var(--gold)
+  );
+
+  color:white;
+
+  font-family:
+  'Orbitron';
+
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+/* ===========================
+   PARTICLE
+=========================== */
+
+.particle{
+  position:fixed;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:1;
+}
+
+.particle1{
+  width:10px;
+  height:10px;
+  background:#00a8ff;
+  left:15%;
+  top:60%;
+}
+
+.particle2{
+  width:15px;
+  height:15px;
+  background:#8a2be2;
+  right:15%;
+  top:35%;
+}
+
+.particle3{
+  width:12px;
+  height:12px;
+  background:#ffb300;
+  left:70%;
+  top:75%;
+}
+
+.particle4{
+  width:8px;
+  height:8px;
+  background:#ffffff;
+  left:50%;
+  top:20%;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(min-width:992px){
+
+  .content-grid{
+    grid-template-columns:
+      400px
+      1fr;
+    align-items:start;
+  }
+
+  .input-card{
+    position:sticky;
+    top:40px;
+  }
+}
+
+@media(max-width:768px){
+
+  .multi{
+    transform:
+    scale(.8);
+  }
+
+  .card{
+    padding:25px;
+  }
+
+  .input-row{
+    flex-direction:column;
+  }
+
+  .clear-btn{
+    height:55px;
+  }
+}
 </style>
+  
+  
 </head>
+
 <body>
 
-<div class="container">
+  <!-- BACKGROUND STARS -->
+  <div class="stars"></div>
+  <div class="stars2"></div>
+  <div class="stars3"></div>
 
-  <!-- HEADER -->
-  <div class="header">RAGAM4D FREECHIP</div>
-  <div class="subheader">DAPATKAN SALDO GRATISNYA DISINI !
-</div>
+  <!-- MULTIPLIER FLOAT -->
+  <div class="multi x50">x50</div>
+  <div class="multi x100">x100</div>
+  <div class="multi x250">x250</div>
+  <div class="multi x500">x500</div>
+  <div class="multi x1000">x1000</div>
 
-  <!-- KOTAK INPUT (TERPISAH) -->
-  <div class="input-section">
-    <span class="input-label">Masukkan ID Member</span>
-    <div class="input-row">
-      <input id="userid" type="text" placeholder="Contoh: RAGAM01">
-      <button class="clear-btn" onclick="document.getElementById('userid').value=''">HAPUS</button>
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="logo-box">
+
+        <h1 class="logo-title">
+          <span>RAGAM4D</span>
+          <span>FREECHIP</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          DAPATKAN SALDO GRATISNYA DISINI!
+        </p>
+
+      </div>
+
+      <!-- ASTRONAUT -->
+      <div class="astronaut-box">
+
+        <!-- GANTI FILE INI DENGAN GAMBAR ASTRONAUT KAMU -->
+        <img
+src="https://i.ibb.co/Dfcr4YPH/Astronauts-in-colourful-casino-space-adventure.png"
+alt="Astronaut"
+class="astronaut">
+
+      </div>
+
+    </section>
+
+    <!-- CONTENT -->
+    <section class="content-grid">
+
+      <!-- INPUT -->
+      <div class="card input-card">
+
+        <h3>
+          MASUKKAN ID MEMBER
+        </h3>
+
+        <div class="input-row">
+
+          <input
+            id="userid"
+            type="text"
+            placeholder="Contoh: RAGAM01">
+
+          <button
+            class="clear-btn"
+            id="clearBtn">
+
+            HAPUS
+
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- WHEEL -->
+      <div class="card wheel-card">
+
+        <h3>
+          RODA SALDO GRATIS
+        </h3>
+
+        <div id="wheelBox">
+
+          <div id="pointer"></div>
+
+          <canvas
+            id="wheel"
+            width="450"
+            height="450">
+          </canvas>
+
+        </div>
+
+        <button
+          id="spinBtn"
+          class="spin-btn">
+
+          PUTAR SEKARANG
+
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- POPUP -->
+  <div id="popup">
+
+    <div class="popup-box">
+
+      <div class="popup-title">
+        SELAMAT!
+      </div>
+
+      <div class="popup-sub">
+        KAMU BERHASIL MENDAPATKAN
+      </div>
+
+      <div id="resultText">
+      </div>
+
+      <button
+        id="claimBtn"
+        class="claim-btn">
+
+        KLAIM HADIAH
+
+      </button>
+
     </div>
+
   </div>
 
-  <!-- KOTAK RODA (TERPISAH) -->
-  <div class="wheel-section">
-    <div class="wheel-label">RODA SALDO GRATIS</div>
+  <!-- PARTICLE -->
+  <div class="particle particle1"></div>
+  <div class="particle particle2"></div>
+  <div class="particle particle3"></div>
+  <div class="particle particle4"></div>
 
-    <div id="wheelBox">
-      <div id="pointer"></div>
-      <canvas id="wheel" width="300" height="300"></canvas>
-    </div>
+  <!-- JS -->
+ <script>
+ /* ======================================
+   ELEMENT
+====================================== */
 
-    <button class="spin-btn" id="spinBtn" onclick="spin()">PUTAR SEKARANG</button>
-  </div>
+const canvas = document.getElementById("wheel");
+const ctx = canvas.getContext("2d");
 
-</div>
+const spinBtn = document.getElementById("spinBtn");
+const clearBtn = document.getElementById("clearBtn");
+const userId = document.getElementById("userid");
 
-<!-- POPUP -->
-<div id="popup">
-  <div class="popup-box">
-    <div class="popup-title">SELAMAT! KAMU MENANG</div>
-    <div id="resultText"></div>
-    <div class="popup-sub">Klik tombol di bawah untuk klaim hadiah</div>
-    <button class="claim-btn" onclick="klaim()">KLIK KLAIM HADIAH</button>
-  </div>
-</div>
+const popup = document.getElementById("popup");
+const resultText = document.getElementById("resultText");
+const claimBtn = document.getElementById("claimBtn");
 
-<script>
-  const canvas = document.getElementById("wheel");
-  const ctx    = canvas.getContext("2d");
+/* ======================================
+   SETTING HADIAH
+   CUKUP EDIT BAGIAN INI SAJA
+====================================== */
 
-  const hadiah = const prizes = [
+const prizes = [
   {
-  text:"ZONK",
-  color:"#FFB300",
-  textColor:"#fff"
-},
-{
-  text:"20.000",
-  color:"#FFB300",
-  textColor:"#fff"
-},
-{
-  text:"ZONK",
-  color:"#2B124C",
-  textColor:"#fff"
-},
-{
-  text:"30.000",
-  color:"#00A8FF",
-  textColor:"#fff"
-},
-{
-  text:"ZONK",
-  color:"#00A8FF",
-  textColor:"#fff"
-},
-{
-  text:"40.000",
-  color:"#8A2BE2",
-  textColor:"#fff"
-},
-{
-  text:"ZONK",
-  color:"#8A2BE2",
-  textColor:"#fff"
-},
-{
-  text:"50.000",
-  color:"#FF7B00",
-  textColor:"#fff"
-},
-{
-  text:"ZONK",
-  color:"#4CC9F0",
-  textColor:"#fff"
-}
+    text: "50.000",
+    color: "#00A8FF"
+  },
+  {
+    text: "100.000",
+    color: "#8A2BE2"
+  },
+  {
+    text: "250.000",
+    color: "#FFB300"
+  },
+  {
+    text: "500.000",
+    color: "#FF7B00"
+  },
+  {
+    text: "1.000.000",
+    color: "#00A8FF"
+  },
+  {
+    text: "ZONK",
+    color: "#232323"
+  }
 ];
-  const colors = [
-    "#dedcdc", "#665e5e", "#dedcdc", "#665e5e", "#dedcdc","#665e5e", "#dedcdc","#665e5e"
-  ];
 
-  const totalSlice = prizes.length;
-  const sliceDeg    = 360 / totalSlice;          // derajat per segmen
-  const sliceRad    = (Math.PI * 2) / totalSlice; // radian per segmen
+/* ======================================
+   LINK KLAIM
+====================================== */
 
-  let currentDeg = 0;
-  let isSpinning  = false;
+const CLAIM_URL = "https://ragam4d03.com/";
 
-  /* ============================
-     GAMBAR RODA
-  ============================ */
-  function draw(rotateDeg) {
-    ctx.clearRect(0, 0, 300, 300);
+/* ======================================
+   WHEEL
+====================================== */
 
-    const cx = 150, cy = 150, r = 145;
-    const offsetRad = (rotateDeg * Math.PI) / 180; // konversi ke radian untuk canvas
+const totalSlice = prizes.length;
+const sliceRad = (Math.PI * 2) / totalSlice;
 
-    for (let i = 0; i < totalSlice; i++) {
-      const startAngle = sliceRad * i + offsetRad;
-      const endAngle   = sliceRad * (i + 1) + offsetRad;
+let currentDeg = 0;
+let isSpinning = false;
 
-      // Isi segmen
-      ctx.beginPath();
-      ctx.fillStyle =
-prizes[i].color;
-      ctx.moveTo(cx, cy);
-      ctx.arc(cx, cy, r, startAngle, endAngle);
-      ctx.closePath();
-      ctx.fill();
+/* ======================================
+   DRAW WHEEL
+====================================== */
 
-      // Garis pemisah
-      ctx.beginPath();
-      ctx.strokeStyle = "rgba(255,255,255,0.25)";
-      ctx.lineWidth = 1.5;
-      ctx.moveTo(cx, cy);
-      ctx.arc(cx, cy, r, startAngle, endAngle);
-      ctx.closePath();
-      ctx.stroke();
+function drawWheel(rotation = 0) {
 
-      // Teks hadiah
-      ctx.save();
-      ctx.translate(cx, cy);
-      ctx.rotate(startAngle + sliceRad / 2);
-      ctx.fillStyle = "#fff";
-      ctx.font = "bold 14px Orbitron, Arial";
-      ctx.shadowColor = "rgba(0,0,0,0.7)";
-      ctx.shadowBlur = 4;
-      ctx.fillStyle =
-prizes[i].textColor;
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
 
-ctx.fillText(
-prizes[i].text,
-60,
-5
-);
-      ctx.restore();
-    }
+  const cx = canvas.width / 2;
+  const cy = canvas.height / 2;
 
-    // Lingkaran tengah (hub)
+  const radius =
+    canvas.width / 2 - 10;
+
+  const offset =
+    rotation *
+    Math.PI /
+    180;
+
+  for (
+    let i = 0;
+    i < totalSlice;
+    i++
+  ) {
+
+    const start =
+      i *
+      sliceRad +
+      offset;
+
+    const end =
+      start +
+      sliceRad;
+
+    /* SEGMENT */
+
     ctx.beginPath();
-    ctx.arc(cx, cy, 18, 0, Math.PI * 2);
-    ctx.fillStyle = "#ffd700";
-    ctx.shadowColor = "#ffd700";
-    ctx.shadowBlur = 15;
+
+    ctx.moveTo(
+      cx,
+      cy
+    );
+
+    ctx.arc(
+      cx,
+      cy,
+      radius,
+      start,
+      end
+    );
+
+    ctx.closePath();
+
+    ctx.fillStyle =
+      prizes[i].color;
+
     ctx.fill();
-    ctx.shadowBlur = 0;
+
+    /* BORDER */
+
+    ctx.lineWidth = 3;
+    ctx.strokeStyle =
+      "rgba(255,255,255,.15)";
+
+    ctx.stroke();
+
+    /* TEXT */
+
+    ctx.save();
+
+    ctx.translate(
+      cx,
+      cy
+    );
+
+    ctx.rotate(
+      start +
+      sliceRad / 2
+    );
+
+    ctx.fillStyle =
+      "#ffffff";
+
+    ctx.font =
+      "700 18px Orbitron";
+
+    ctx.textAlign =
+      "center";
+
+    ctx.fillText(
+      prizes[i].text,
+      radius * 0.65,
+      6
+    );
+
+    ctx.restore();
   }
 
-  draw(0);
+  /* CENTER */
 
-  /* ============================
-     SPIN — LOGIKA BENAR
-  ============================ */
-  function spin() {
-    if (isSpinning) return;
+  ctx.beginPath();
 
-    const id = document.getElementById("userid").value.trim();
-    if (!id) { alert("Isi ID Member dulu!"); return; }
+  ctx.arc(
+    cx,
+    cy,
+    35,
+    0,
+    Math.PI * 2
+  );
 
-    isSpinning = true;
-    document.getElementById("spinBtn").disabled = true;
+  ctx.fillStyle =
+    "#FFB300";
 
-    // Pilih hadiah acak
-    const index = Math.floor(Math.random() * totalSlice);
+  ctx.shadowColor =
+    "#FFB300";
 
-    /*
-     * KALKULASI SUDUT YANG BENAR:
-     * Pointer ada di ATAS (270 derajat jika 0=kanan, atau -90 derajat).
-     * Roda digambar mulai dari angle 0 (kanan).
-     * Pusat segmen i = (i * sliceDeg + sliceDeg/2) derajat dari posisi awal roda.
-     *
-     * Setelah roda dirotasi sebesar totalDeg,
-     * sudut asli θ pada roda akan muncul di posisi (θ + totalDeg) mod 360 di layar.
-     * Agar pusat segmen index berada di posisi pointer (270°):
-     *   (segmentCenter + totalDeg) mod 360 = 270
-     *   totalDeg = (270 - segmentCenter + 360) mod 360
-     */
+  ctx.shadowBlur =
+    30;
 
-    const segmentCenter = index * sliceDeg + sliceDeg / 2;
-    const needed        = (270 - segmentCenter + 3600) % 360;
+  ctx.fill();
 
-    // Selisih dari posisi roda saat ini ke posisi yang dibutuhkan
-    const currentMod = currentDeg % 360;
-    let   spinAmount = (needed - currentMod + 360) % 360;
+  ctx.shadowBlur = 0;
+}
 
-    // Minimal putar 90 derajat agar tidak terasa aneh
-    if (spinAmount < 90) spinAmount += 360;
+drawWheel();
 
-    // Tambah 5 putaran penuh agar terlihat dramatis
-    const totalDeg = currentDeg + 360 * 5 + spinAmount;
+/* ======================================
+   EASING
+====================================== */
 
-    // Durasi & easing animasi canvas
-    const duration   = 4500; // ms
-    const startTime  = performance.now();
-    const startDeg   = currentDeg;
+function easeOut(t) {
+  return (
+    1 -
+    Math.pow(
+      1 - t,
+      3
+    )
+  );
+}
 
-    function easeOut(t) {
-      // Cubic ease-out
-      return 1 - Math.pow(1 - t, 3);
+/* ======================================
+   SPIN
+====================================== */
+
+function spin() {
+
+  if (isSpinning)
+    return;
+
+  const id =
+    userId.value.trim();
+
+  if (!id) {
+
+    alert(
+      "Masukkan ID Member terlebih dahulu."
+    );
+
+    return;
+  }
+
+  isSpinning = true;
+
+  spinBtn.disabled = true;
+
+  const winner =
+    Math.floor(
+      Math.random() *
+      totalSlice
+    );
+
+  const sliceDeg =
+    360 /
+    totalSlice;
+
+  const center =
+    winner *
+    sliceDeg +
+    sliceDeg / 2;
+
+  const target =
+    (
+      270 -
+      center +
+      360
+    ) %
+    360;
+
+  const current =
+    currentDeg %
+    360;
+
+  let move =
+    (
+      target -
+      current +
+      360
+    ) %
+    360;
+
+  if (move < 120) {
+    move += 360;
+  }
+
+  const finalDeg =
+    currentDeg +
+    360 * 6 +
+    move;
+
+  const duration =
+    5000;
+
+  const start =
+    performance.now();
+
+  const initial =
+    currentDeg;
+
+  function animate(
+    now
+  ) {
+
+    const elapsed =
+      now -
+      start;
+
+    const progress =
+      Math.min(
+        elapsed /
+        duration,
+        1
+      );
+
+    const eased =
+      easeOut(
+        progress
+      );
+
+    currentDeg =
+      initial +
+      (
+        finalDeg -
+        initial
+      ) *
+      eased;
+
+    drawWheel(
+      currentDeg
+    );
+
+    if (
+      progress < 1
+    ) {
+
+      requestAnimationFrame(
+        animate
+      );
+
+    } else {
+
+      showResult(
+        winner
+      );
     }
+  }
 
-    function animate(now) {
-      const elapsed  = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easedDeg = startDeg + (totalDeg - startDeg) * easeOut(progress);
+  requestAnimationFrame(
+    animate
+  );
+}
 
-      draw(easedDeg);
+/* ======================================
+   RESULT
+====================================== */
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        // Selesai
-        currentDeg = totalDeg;
-        draw(currentDeg);
-        showResult(index);
-      }
+function showResult(
+  index
+) {
+
+  resultText.innerText =
+    prizes[index].text;
+
+  popup.style.display =
+    "flex";
+
+  isSpinning = false;
+
+  spinBtn.disabled =
+    false;
+}
+
+/* ======================================
+   BUTTON
+====================================== */
+
+spinBtn.addEventListener(
+  "click",
+  spin
+);
+
+clearBtn.addEventListener(
+  "click",
+  () => {
+    userId.value = "";
+    userId.focus();
+  }
+);
+
+claimBtn.addEventListener(
+  "click",
+  () => {
+
+    window.location.href =
+      CLAIM_URL;
+  }
+);
+
+/* ======================================
+   CLOSE POPUP
+====================================== */
+
+popup.addEventListener(
+  "click",
+  (e) => {
+
+    if (
+      e.target === popup
+    ) {
+
+      popup.style.display =
+        "none";
     }
-
-    requestAnimationFrame(animate);
   }
-
-  /* ============================
-     TAMPILKAN HASIL
-  ============================ */
-  function showResult(index) {
-    const win =
-prizes[index].text;
-    document.getElementById("resultText").innerText = win;
-    document.getElementById("popup").style.display = "flex";
-  }
-
-  /* ============================
-     KLAIM
-  ============================ */
-  function klaim() {
-    window.location.href = "https://ragamnice.com/";
-  }
+);
 </script>
 
 </body>
