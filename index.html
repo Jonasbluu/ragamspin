@@ -3,592 +3,246 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>RAGAM4D FREEBET</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAGAM4D Premium Wheel</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap');
-
-  :root {
-    --pink: #ff2d78;
-    --pink2: #ff80b0;
-    --gold: #ffd700;
-    --dark: #0a0010;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body{
-    font-family:'Rajdhani',sans-serif;
-    min-height:100vh;
-    color:#fff;
-    overflow-x:hidden;
-
-    background:
-    linear-gradient(
-        rgba(10,0,30,.70),
-        rgba(10,0,30,.85)
-    ),
-    url('BACKGROUND-GALAXY.jpg');
-
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+:root{
+--gold:#ffd700;
+--cyan:#00d9ff;
+--purple:#8b2cff;
+--orange:#ff8c00;
 }
-
- body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 0, 20, 0.65);
-    z-index: 0;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Arial,sans-serif;
+min-height:100vh;
+padding:20px;
+display:flex;
+justify-content:center;
+background:url('https://i.ibb.co/TqHJHwMt/0b2c821e-36bf-41ad-8ed7-adc500d06a72.png') center/cover no-repeat;
 }
-
-  .container {
-    position: relative;
-    z-index: 1;
-    padding: 20px 16px 40px;
-    max-width: 420px;
-    margin: 0 auto;
-  }
-
-  /* ===== ANIMASI JUDUL PINK ===== */
-  @keyframes pinkGlow {
-    0%   { color: #ffffff; text-shadow: 0 0 10px #ffffff, 0 0 30px #ffffff; }
-    25%  { color: #ffffff; text-shadow: 0 0 20px #ffffff, 0 0 50px #ffffff; }
-    75%  { color: #fae452; text-shadow: 0 0 25px #fae452, 0 0 60px #ffffff; }
-    100% { color: #ffffff; text-shadow: 0 0 10px #ffffff, 0 0 30px #ffffff; }
-  }
-
-  @keyframes floatTitle {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-5px); }
-  }
-
-  .header{
-    font-family:'Orbitron',sans-serif;
-    font-size:50px;
-    font-weight:900;
-    letter-spacing:5px;
-
-    background:
-    linear-gradient(
-        180deg,
-        #ffffff,
-        #9fe7ff,
-        #39a9ff
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    text-shadow:
-    0 0 20px #00aaff,
-    0 0 40px #0066ff,
-    0 0 80px #0066ff;
-
-    margin-bottom:10px;
+body:before{
+content:'';position:fixed;inset:0;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(5px);
 }
-
- .subheader{
-    font-size:20px;
-    color:#ffffff;
-    opacity:.95;
-
-    text-shadow:
-    0 0 10px #00aaff,
-    0 0 20px #00aaff;
-
-    margin-bottom:25px;
+.wrap{position:relative;z-index:2;width:100%;max-width:560px}
+.logo{text-align:center;margin-bottom:15px}
+.logo img{
+width:min(320px,85%);
+animation:glow 3s infinite alternate;
 }
-
-  /* ===== KOTAK INPUT ===== */
-  .input-section{
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.15);
-
-    border-radius:25px;
-
-    padding:25px;
-
-    margin-bottom:25px;
-
-    box-shadow:
-    0 0 15px rgba(0,170,255,.30),
-    0 0 40px rgba(0,170,255,.15);
+@keyframes glow{
+0%{filter:drop-shadow(0 0 10px #00aaff) drop-shadow(0 0 20px #00aaff)}
+100%{filter:drop-shadow(0 0 10px #ff9900) drop-shadow(0 0 25px #ff9900)}
 }
-
-  .input-label {
-    font-size: 12px;
-    letter-spacing: 5px;
-    color: #ffffff;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    display: block;
-  }
-
-  .input-row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
- #userid{
-
-    flex:1;
-
-    padding:14px;
-
-    border-radius:12px;
-
-    border:1px solid #00aaff;
-
-    background:rgba(255,255,255,.05);
-
-    color:#fff;
-
-    font-size:15px;
-
-    box-shadow:
-    inset 0 0 10px rgba(0,170,255,.15);
+.bigtitle{
+color:#fff;
+font-size:clamp(24px,5vw,42px);
+font-weight:900;
+text-align:center;
+text-shadow:0 0 20px #ff66ff;
+margin:10px 0 20px;
 }
-
-  #userid:focus {
-    border-color: #ffffff;
-    box-shadow: 0 0 12px #ffffff;
-  }
-
-  #userid::placeholder { color: rgba(235,235,235,0.25); }
-
-  .clear-btn{
-
-    padding:14px 18px;
-
-    border:none;
-
-    border-radius:12px;
-
-    color:#fff;
-
-    cursor:pointer;
-
-    background:
-    linear-gradient(
-        135deg,
-        #5f00ff,
-        #00aaff
-    );
-
-    box-shadow:
-    0 0 15px #00aaff;
+.card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.4);
+border-radius:32px;
+padding:18px;
+box-shadow:0 0 25px rgba(255,255,255,.15);
+margin-bottom:18px;
 }
-
-  .clear-btn:hover {
-    background: rgba(255,45,120,0.3);
-    color: #fff;
-  }
-
-  /* ===== KOTAK RODA ===== */
-  .wheel-section{
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(18px);
-
-    border:2px solid #4ea8ff;
-
-    border-radius:30px;
-
-    padding:30px 20px;
-
-    box-shadow:
-    0 0 20px #00aaff,
-    0 0 50px rgba(0,170,255,.35);
+.label{
+text-align:center;
+color:var(--gold);
+font-size:22px;
+font-weight:bold;
+letter-spacing:4px;
+margin-bottom:12px;
 }
-
-  .wheel-label {
-    font-size: 17px;
-    letter-spacing: 5px;
-    color: #fae452;
-    text-transform: uppercase;
-    margin-bottom: 38px;
-    opacity: 10;
-  }
-
-  #wheelBox {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
-  }
-
-  #pointer {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -20px;
-    width: 0;
-    height: 0;
-    border-left: 14px solid transparent;
-    border-right: 14px solid transparent;
-    border-top: 30px solid #fae452;
-    z-index: 10;
-    filter: drop-shadow(0 0 5px #0a0a0a);
-  }
-
-  #wheel {
-    border-radius: 18%;
-    box-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
-    display: block;
-  }
-
-  /* ===== TOMBOL SPIN ===== */
-  @keyframes pulseGold {
-     50%       { box-shadow: 0 0 15px #fae452, 0 0 30px rgba(255,215,0,0.3); }
-  }
-
-  .spin-btn{
-
-    width:100%;
-
-    padding:18px;
-
-    border:none;
-
-    border-radius:15px;
-
-    color:#fff;
-
-    font-size:17px;
-
-    font-family:'Orbitron',sans-serif;
-
-    letter-spacing:3px;
-
-    cursor:pointer;
-
-    background:
-    linear-gradient(
-        135deg,
-        #00d4ff,
-        #005eff
-    );
-
-    box-shadow:
-    0 0 20px #00d4ff,
-    0 0 50px rgba(0,212,255,.45);
+.row{display:flex;gap:8px}
+input{
+flex:1;height:50px;border-radius:12px;
+background:#000;color:#fff;border:1px solid #fff;
+padding:12px;font-size:16px;
 }
-
-  .spin-btn:hover:not(:disabled) { transform: scale(1.03); }
-  .spin-btn:active:not(:disabled) { transform: scale(0.97); }
-  .spin-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    animation: none;
-  }
-
-  /* ===== POPUP ===== */
-  #popup {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0; left: 0;
-    background: rgba(0,0,0,0.88);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-
-  @keyframes popIn {
-    0%   { transform: scale(0.5); opacity: 0; }
-    70%  { transform: scale(1.07); opacity: 1; }
-    100% { transform: scale(1); }
-  }
-
-  .popup-box {
-    background: linear-gradient(160deg, #160010, #0a0020);
-    padding: 32px 28px;
-    border-radius: 20px;
-    border: 2px solid var(--gold);
-    box-shadow: 0 0 40px rgba(255,215,0,0.5), inset 0 0 30px rgba(255,215,0,0.05);
-    max-width: 320px;
-    width: 90%;
-    animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
-  }
-
-  .popup-icon {
-    font-size: 48px;
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .popup-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
-    letter-spacing: 3px;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-
-  #resultText {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 28px;
-    font-weight: 900;
-    color: #fff;
-    text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff;
-    margin-bottom: 8px;
-    animation: #ffffff
-  }
-
-  .popup-sub {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-  }
-
-  .claim-btn {
-    width: 100%;
-    padding: 13px 25px;
-    background: linear-gradient(135deg, #ffd700, #ffaa00);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #ffffff;
-    transition: transform 0.15s;
-  }
-
-  .claim-btn:hover { transform: scale(1.04); }
-  .hero-logo{
-    text-align:center;
-    margin-top:20px;
-    margin-bottom:20px;
+.btn2{
+width:110px;border-radius:12px;border:1px solid #fff;
+background:#333;color:#fff;font-weight:bold;
 }
-
-.hero-logo img{
-    width:320px;
-    max-width:90%;
-
-    filter:
-    drop-shadow(0 0 15px #00aaff)
-    drop-shadow(0 0 30px #0066ff);
+.wheel-card{text-align:center;position:relative}
+.pointer{
+position:absolute;left:50%;top:72px;transform:translateX(-50%);
+width:0;height:0;
+border-left:18px solid transparent;
+border-right:18px solid transparent;
+border-top:34px solid var(--gold);
+z-index:10;
+filter:drop-shadow(0 0 10px gold);
+}
+.wheel-box{
+padding:15px;
+border-radius:30px;
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(15px);
+box-shadow:
+0 0 25px rgba(255,255,255,.3),
+inset 0 0 20px rgba(255,255,255,.2);
+}
+canvas{
+width:100%;
+max-width:380px;
+transition:transform 6s cubic-bezier(.12,.85,.12,1);
+}
+#spinBtn{
+margin-top:15px;
+width:100%;
+height:70px;
+border:none;
+border-radius:18px;
+background:linear-gradient(90deg,#ffea00,#ffb700);
+font-size:clamp(22px,5vw,34px);
+font-weight:900;
+cursor:pointer;
+box-shadow:0 0 20px gold;
+}
+.popup{
+display:none;position:fixed;inset:0;
+background:rgba(0,0,0,.8);
+justify-content:center;align-items:center;
+z-index:9999;
+}
+.popbox{
+background:#111;color:#fff;
+padding:25px;border-radius:20px;text-align:center;
+border:1px solid #fff;
+}
+.popbox button{
+margin-top:15px;padding:10px 25px;border:none;
+border-radius:10px;background:gold;font-weight:bold;
+}
+.note{
+text-align:center;color:#ddd;margin-top:10px;font-size:13px
 }
 </style>
 </head>
 <body>
 
-<<div class="hero-logo">
-    <img src="logo-ragam4d.png">
+<div class="wrap">
+
+<div class="logo">
+<!-- GANTI URL LOGO SEKALI SAJA -->
+<img src="https://via.placeholder.com/600x180?text=RAGAM4D+LOGO">
 </div>
 
-  <!-- HEADER -->
-  <div class="header">RAGAM4D FREECHIP</div>
- <div class="subheader">
-SPIN GRATIS • BONUS MEMBER • JACKPOT HARIAN
+<div class="bigtitle">DAPATKAN SALDO GRATISNYA DISINI!</div>
+
+<div class="card">
+<div class="label">MASUKKAN ID MEMBER</div>
+<div class="row">
+<input id="userid" placeholder="CONTOH: RAGAM01">
+<button class="btn2" onclick="userid.value=''">HAPUS</button>
+</div>
 </div>
 
-  <!-- KOTAK INPUT (TERPISAH) -->
-  <div class="input-section">
-    <span class="input-label">Masukkan ID Member</span>
-    <div class="input-row">
-      <input id="userid" type="text" placeholder="Contoh: RAGAM01">
-      <button class="clear-btn" onclick="document.getElementById('userid').value=''">HAPUS</button>
-    </div>
-  </div>
+<div class="card wheel-card">
+<div class="label">RODA SALDO GRATIS</div>
+<div class="pointer"></div>
 
-  <!-- KOTAK RODA (TERPISAH) -->
-  <div class="wheel-section">
-    <div class="wheel-label">RODA SALDO GRATIS</div>
+<div class="wheel-box">
+<canvas id="wheel" width="400" height="400"></canvas>
+</div>
 
-    <div id="wheelBox">
-      <div id="pointer"></div>
-      <canvas id="wheel" width="300" height="300"></canvas>
-    </div>
-
-    <button class="spin-btn" id="spinBtn" onclick="spin()">PUTAR SEKARANG</button>
-  </div>
+<button id="spinBtn">PUTAR SEKARANG</button>
+<div class="note">1 ID HANYA BISA SPIN 1 KALI</div>
+</div>
 
 </div>
 
-<!-- POPUP -->
-<div id="popup">
-  <div class="popup-box">
-    <div class="popup-title">SELAMAT! KAMU MENANG</div>
-    <div id="resultText"></div>
-    <div class="popup-sub">Klik tombol di bawah untuk klaim hadiah</div>
-    <button class="claim-btn" onclick="klaim()">KLIK KLAIM HADIAH</button>
-  </div>
+<div class="popup" id="popup">
+<div class="popbox">
+<div id="msg"></div>
+<button onclick="popup.style.display='none'">OK</button>
+</div>
 </div>
 
 <script>
-  const canvas = document.getElementById("wheel");
-  const ctx    = canvas.getContext("2d");
+const hadiah=["100.000","ZONK","50.000","BONUS","30.000","ZONK","20.000","FREE CHIP"];
+const warna=["#ffd700","#ff7b00","#00d9ff","#8b2cff","#ffd700","#ff7b00","#00d9ff","#8b2cff"];
 
-  const hadiah = ["30.000", "ZONK", "30.000", "ZONK", "30.000", "ZONK", "30.000", "ZONK"];
-  const colors = [
-"#6d28d9",
-"#0f172a",
-"#7c3aed",
-"#0f172a",
-"#9333ea",
-"#0f172a",
-"#a855f7",
-"#0f172a"
-];
+const cv=document.getElementById("wheel");
+const ctx=cv.getContext("2d");
 
-  const totalSlice  = hadiah.length;
-  const sliceDeg    = 360 / totalSlice;          // derajat per segmen
-  const sliceRad    = (Math.PI * 2) / totalSlice; // radian per segmen
+function draw(){
+let c=200,r=190;
+for(let i=0;i<hadiah.length;i++){
+let a=i*2*Math.PI/hadiah.length;
+let b=(i+1)*2*Math.PI/hadiah.length;
 
-  let currentDeg = 0;
-  let isSpinning  = false;
+ctx.beginPath();
+ctx.moveTo(c,c);
+ctx.arc(c,c,r,a,b);
+ctx.fillStyle=warna[i];
+ctx.fill();
 
-  /* ============================
-     GAMBAR RODA
-  ============================ */
-  function draw(rotateDeg) {
-    ctx.clearRect(0, 0, 300, 300);
+ctx.save();
+ctx.translate(c,c);
+ctx.rotate(a+(b-a)/2);
+ctx.fillStyle="#fff";
+ctx.font="bold 22px Arial";
+ctx.textAlign="center";
+ctx.fillText(hadiah[i],130,5);
+ctx.restore();
+}
+ctx.beginPath();
+ctx.arc(c,c,18,0,Math.PI*2);
+ctx.fillStyle="gold";
+ctx.fill();
+}
+draw();
 
-    const cx = 150, cy = 150, r = 145;
-    const offsetRad = (rotateDeg * Math.PI) / 180; // konversi ke radian untuk canvas
+function pop(t){
+msg.innerText=t;
+popup.style.display="flex";
+}
 
-    for (let i = 0; i < totalSlice; i++) {
-      const startAngle = sliceRad * i + offsetRad;
-      const endAngle   = sliceRad * (i + 1) + offsetRad;
+let rot=0;
 
-      // Isi segmen
-      ctx.beginPath();
-      ctx.fillStyle = colors[i];
-      ctx.moveTo(cx, cy);
-      ctx.arc(cx, cy, r, startAngle, endAngle);
-      ctx.closePath();
-      ctx.fill();
+spinBtn.onclick=()=>{
+let id=userid.value.trim();
 
-      // Garis pemisah
-      ctx.beginPath();
-      ctx.strokeStyle = "rgba(255,255,255,0.25)";
-      ctx.lineWidth = 1.5;
-      ctx.moveTo(cx, cy);
-      ctx.arc(cx, cy, r, startAngle, endAngle);
-      ctx.closePath();
-      ctx.stroke();
+if(!id){
+pop("ISI USER ID DAHULU");
+return;
+}
 
-      // Teks hadiah
-      ctx.save();
-      ctx.translate(cx, cy);
-      ctx.rotate(startAngle + sliceRad / 2);
-      ctx.fillStyle = "#fff";
-      ctx.font = "bold 14px Orbitron, Arial";
-      ctx.shadowColor = "rgba(0,0,0,0.7)";
-      ctx.shadowBlur = 4;
-      ctx.fillText(hadiah[i], 60, 5);
-      ctx.restore();
-    }
+if(localStorage.getItem("spin_"+id)){
+let h=localStorage.getItem("spin_"+id);
+spinBtn.innerHTML="CLAIM "+h;
+pop("ID INI SUDAH MELAKUKAN SPIN");
+return;
+}
 
-    // Lingkaran tengah (hub)
-    ctx.beginPath();
-    ctx.arc(cx, cy, 18, 0, Math.PI * 2);
-    ctx.fillStyle = "#ffd700";
-    ctx.shadowColor = "#ffd700";
-    ctx.shadowBlur = 15;
-    ctx.fill();
-    ctx.shadowBlur = 0;
-  }
+let win=Math.floor(Math.random()*hadiah.length);
+let angle=(360/hadiah.length)*win;
 
-  draw(0);
+rot += 3600-angle;
 
-  /* ============================
-     SPIN — LOGIKA BENAR
-  ============================ */
-  function spin() {
-    if (isSpinning) return;
+cv.style.transform=`rotate(${rot}deg)`;
 
-    const id = document.getElementById("userid").value.trim();
-    if (!id) { alert("Isi ID Member dulu!"); return; }
+spinBtn.disabled=true;
 
-    isSpinning = true;
-    document.getElementById("spinBtn").disabled = true;
+setTimeout(()=>{
+let hasil=hadiah[win];
+localStorage.setItem("spin_"+id,hasil);
 
-    // Pilih hadiah acak
-    const index = Math.floor(Math.random() * totalSlice);
+spinBtn.innerHTML="CLAIM "+hasil;
+spinBtn.style.background="linear-gradient(90deg,#ff9900,#ffd700)";
 
-    /*
-     * KALKULASI SUDUT YANG BENAR:
-     * Pointer ada di ATAS (270 derajat jika 0=kanan, atau -90 derajat).
-     * Roda digambar mulai dari angle 0 (kanan).
-     * Pusat segmen i = (i * sliceDeg + sliceDeg/2) derajat dari posisi awal roda.
-     *
-     * Setelah roda dirotasi sebesar totalDeg,
-     * sudut asli θ pada roda akan muncul di posisi (θ + totalDeg) mod 360 di layar.
-     * Agar pusat segmen index berada di posisi pointer (270°):
-     *   (segmentCenter + totalDeg) mod 360 = 270
-     *   totalDeg = (270 - segmentCenter + 360) mod 360
-     */
-
-    const segmentCenter = index * sliceDeg + sliceDeg / 2;
-    const needed        = (270 - segmentCenter + 3600) % 360;
-
-    // Selisih dari posisi roda saat ini ke posisi yang dibutuhkan
-    const currentMod = currentDeg % 360;
-    let   spinAmount = (needed - currentMod + 360) % 360;
-
-    // Minimal putar 90 derajat agar tidak terasa aneh
-    if (spinAmount < 90) spinAmount += 360;
-
-    // Tambah 5 putaran penuh agar terlihat dramatis
-    const totalDeg = currentDeg + 360 * 5 + spinAmount;
-
-    // Durasi & easing animasi canvas
-    const duration   = 4500; // ms
-    const startTime  = performance.now();
-    const startDeg   = currentDeg;
-
-    function easeOut(t) {
-      // Cubic ease-out
-      return 1 - Math.pow(1 - t, 3);
-    }
-
-    function animate(now) {
-      const elapsed  = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easedDeg = startDeg + (totalDeg - startDeg) * easeOut(progress);
-
-      draw(easedDeg);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        // Selesai
-        currentDeg = totalDeg;
-        draw(currentDeg);
-        showResult(index);
-      }
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  /* ============================
-     TAMPILKAN HASIL
-  ============================ */
-  function showResult(index) {
-    const win = hadiah[index];
-    document.getElementById("resultText").innerText = win;
-    document.getElementById("popup").style.display = "flex";
-  }
-
-  /* ============================
-     KLAIM
-  ============================ */
-  function klaim() {
-    window.location.href = "https://ragamnice.com/";
-  }
+pop("SELAMAT! KAMU MENDAPATKAN "+hasil);
+},6000);
+};
 </script>
 
 </body>
