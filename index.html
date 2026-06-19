@@ -7,40 +7,73 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap');
 
-  :root {
-    --pink: #ff2d78;
-    --pink2: #ff80b0;
-    --gold: #ffd700;
-    --dark: #0a0010;
-  }
+  :root{
+  --bg-dark:#07020F;
+  --bg-purple:#12041F;
+  --purple:#8A2BE2;
+  --purple-light:#C77DFF;
+  --blue:#00A8FF;
+  --blue2:#4CC9F0;
+  --gold:#FFB300;
+  --gold2:#FF7B00;
+  --white:#F5F7FF;
+
+  --radius:28px;
+  --shadow-blue:
+      0 0 20px rgba(0,168,255,.4),
+      0 0 50px rgba(0,168,255,.2);
+
+  --shadow-gold:
+      0 0 20px rgba(255,179,0,.4),
+      0 0 50px rgba(255,179,0,.2);
+
+  --glass:
+      rgba(18,4,31,.55);
+}
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    font-family: 'Rajdhani', sans-serif;
-    text-align: center;
-    color: #fff;
-    min-height: 100vh;
-    background: url('https://i.ibb.co/Z1fxf1sG/image.png') no-repeat center center fixed;
-    background-size: cover;
-    overflow-x: hidden;
-  }
+  body{
+  font-family:'Rajdhani',sans-serif;
+  min-height:100vh;
+  color:var(--white);
+  overflow-x:hidden;
+  background:
+      linear-gradient(
+        180deg,
+        rgba(7,2,15,.85),
+        rgba(18,4,31,.92)
+      ),
+      url('./assets/bg-space.webp')
+      center/cover no-repeat fixed;
+}
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 0, 20, 0.65);
-    z-index: 0;
-  }
+  body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+      radial-gradient(
+        circle at top,
+        rgba(138,43,226,.30),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at bottom,
+        rgba(0,168,255,.25),
+        transparent 45%
+      );
+  z-index:0;
+}
 
-  .container {
-    position: relative;
-    z-index: 1;
-    padding: 20px 16px 40px;
-    max-width: 420px;
-    margin: 0 auto;
-  }
+  .container{
+  width:min(95%,1200px);
+  margin:auto;
+  padding:
+      clamp(20px,4vw,40px);
+  position:relative;
+  z-index:2;
+}
 
   /* ===== ANIMASI JUDUL PINK ===== */
   @keyframes pinkGlow {
@@ -55,34 +88,59 @@
     50%       { transform: translateY(-5px); }
   }
 
-  .header {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 35px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    animation: pinkGlow 0.5s ease-in-out infinite, floatTitle 3s ease-in-out infinite;
-    margin-bottom: 15px;
-    padding-top: 18px;
-  }
+  .header{
+  font-family:'Orbitron';
+  font-size:
+      clamp(35px,6vw,72px);
 
-  .subheader {
-    font-size: 20px;
-    color: #ffffff;
-    letter-spacing: 1px;
-    margin-bottom: 22px;
-    opacity: 0.85;
-	animation: blackGlow 0.5s ease-in-out infinite, floatTitle 3s ease-in-out infinite;
-  }
+  font-weight:900;
+
+  background:
+      linear-gradient(
+        90deg,
+        var(--blue),
+        var(--white),
+        var(--gold)
+      );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  text-shadow:
+      0 0 40px rgba(0,168,255,.4);
+
+  margin-bottom:15px;
+}
+
+ .subheader{
+  font-size:
+      clamp(18px,2vw,26px);
+
+  color:#d8d8ff;
+
+  opacity:.9;
+}
 
   /* ===== KOTAK INPUT ===== */
-  .input-section {
-    background: #0a0a0a;
-    border: 1.5px solid #04168c;
-    border-radius: 90px;
-    padding: 20px 30px;
-    margin-bottom: 25px;
-    backdrop-filter: blur(10px);
-  }
+  .input-section{
+  background:
+      rgba(18,4,31,.55);
+
+  border:
+      1px solid
+      rgba(255,255,255,.15);
+
+  border-radius:32px;
+
+  backdrop-filter:
+      blur(20px);
+
+  box-shadow:
+      0 0 50px
+      rgba(138,43,226,.25);
+
+  padding:35px;
+}
 
   .input-label {
     font-size: 12px;
@@ -141,14 +199,24 @@
   }
 
   /* ===== KOTAK RODA ===== */
-  .wheel-section {
-    background: #2b23c4;
-    border: 1.5px solid #ffffff;
-    border-radius: 65px;
-    padding: 24px 20px 22px;
-    backdrop-filter: blur(10px);
-    margin-bottom: 10px;
-  }
+  .wheel-section{
+  background:
+      rgba(18,4,31,.55);
+
+  border:
+      1px solid
+      rgba(255,255,255,.15);
+
+  border-radius:40px;
+
+  padding:35px;
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+      0 0 70px
+      rgba(0,168,255,.15);
+}
 
   .wheel-label {
     font-size: 17px;
@@ -179,40 +247,50 @@
     filter: drop-shadow(0 0 5px #0a0a0a);
   }
 
-  #wheel {
-    border-radius: 18%;
-    box-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
-    display: block;
-  }
+ #wheel{
+  border-radius:50%;
+  box-shadow:
+      0 0 30px rgba(0,168,255,.4),
+      0 0 70px rgba(138,43,226,.4);
+}
 
   /* ===== TOMBOL SPIN ===== */
   @keyframes pulseGold {
      50%       { box-shadow: 0 0 15px #fae452, 0 0 30px rgba(255,215,0,0.3); }
   }
 
-  .spin-btn {
-    width: 100%;
-    padding: 15px 40px;
-    background: linear-gradient(135deg, #fae452, #fae452);
-    border: none;
-    border-radius: 12px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #1a0a00;
-    cursor: pointer;
-    animation: pulseGold 2.5s ease-in-out infinite;
-    transition: transform 0.15s, opacity 0.3s;
-  }
+ .spin-btn{
+  width:100%;
+  padding:18px;
 
-  .spin-btn:hover:not(:disabled) { transform: scale(1.03); }
-  .spin-btn:active:not(:disabled) { transform: scale(0.97); }
-  .spin-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    animation: none;
-  }
+  border:none;
+  border-radius:18px;
+
+  background:
+      linear-gradient(
+        90deg,
+        #ff7b00,
+        #ffb300
+      );
+
+  color:#fff;
+
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:3px;
+
+  box-shadow:
+      0 0 25px
+      rgba(255,179,0,.45);
+
+  transition:.3s;
+}
+
+.spin-btn:hover{
+  transform:
+      translateY(-4px)
+      scale(1.02);
+}
 
   /* ===== POPUP ===== */
   #popup {
@@ -289,8 +367,34 @@
     color: #ffffff;
     transition: transform 0.15s;
   }
+  @media (min-width:768px){
 
+.container{
+  display:grid;
+  grid-template-columns:
+      400px 1fr;
+  gap:35px;
+  align-items:center;
+}
+
+.input-section{
+  order:1;
+}
+
+.wheel-section{
+  order:2;
+}
+}
+
+@media (min-width:1200px){
+
+.container{
+  grid-template-columns:
+      450px
+      650px;
+}
   .claim-btn:hover { transform: scale(1.04); }
+  
 </style>
 </head>
 <body>
@@ -339,12 +443,58 @@
   const canvas = document.getElementById("wheel");
   const ctx    = canvas.getContext("2d");
 
-  const hadiah = ["30.000", "ZONK", "30.000", "ZONK", "30.000", "ZONK", "30.000", "ZONK"];
+  const hadiah = const prizes = [
+  {
+  text:"ZONK",
+  color:"#FFB300",
+  textColor:"#fff"
+},
+{
+  text:"20.000",
+  color:"#FFB300",
+  textColor:"#fff"
+},
+{
+  text:"ZONK",
+  color:"#2B124C",
+  textColor:"#fff"
+},
+{
+  text:"30.000",
+  color:"#00A8FF",
+  textColor:"#fff"
+},
+{
+  text:"ZONK",
+  color:"#00A8FF",
+  textColor:"#fff"
+},
+{
+  text:"40.000",
+  color:"#8A2BE2",
+  textColor:"#fff"
+},
+{
+  text:"ZONK",
+  color:"#8A2BE2",
+  textColor:"#fff"
+},
+{
+  text:"50.000",
+  color:"#FF7B00",
+  textColor:"#fff"
+},
+{
+  text:"ZONK",
+  color:"#4CC9F0",
+  textColor:"#fff"
+}
+];
   const colors = [
     "#dedcdc", "#665e5e", "#dedcdc", "#665e5e", "#dedcdc","#665e5e", "#dedcdc","#665e5e"
   ];
 
-  const totalSlice  = hadiah.length;
+  const totalSlice = prizes.length;
   const sliceDeg    = 360 / totalSlice;          // derajat per segmen
   const sliceRad    = (Math.PI * 2) / totalSlice; // radian per segmen
 
@@ -366,7 +516,8 @@
 
       // Isi segmen
       ctx.beginPath();
-      ctx.fillStyle = colors[i];
+      ctx.fillStyle =
+prizes[i].color;
       ctx.moveTo(cx, cy);
       ctx.arc(cx, cy, r, startAngle, endAngle);
       ctx.closePath();
@@ -389,7 +540,14 @@
       ctx.font = "bold 14px Orbitron, Arial";
       ctx.shadowColor = "rgba(0,0,0,0.7)";
       ctx.shadowBlur = 4;
-      ctx.fillText(hadiah[i], 60, 5);
+      ctx.fillStyle =
+prizes[i].textColor;
+
+ctx.fillText(
+prizes[i].text,
+60,
+5
+);
       ctx.restore();
     }
 
@@ -480,7 +638,8 @@
      TAMPILKAN HASIL
   ============================ */
   function showResult(index) {
-    const win = hadiah[index];
+    const win =
+prizes[index].text;
     document.getElementById("resultText").innerText = win;
     document.getElementById("popup").style.display = "flex";
   }
