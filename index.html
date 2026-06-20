@@ -240,6 +240,7 @@ if(result.status === "used"){
   return;
 }
   spinBtn.disabled=true;
+  
 
   let win = Math.floor(Math.random() * hadiah.length);
 
@@ -286,7 +287,7 @@ cv.style.transform = `rotate(${rot}deg)`;
   })
   .catch(console.error);
 
-},2500);
+},1200);
 };
 
 function warningMsg(){
