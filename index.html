@@ -17,8 +17,7 @@
 body{
 font-family:Arial,sans-serif;
 min-height:100vh;
-padding:8px;
-overflow:hidden;
+padding:20px;
 display:flex;
 justify-content:center;
 background:url('https://i.ibb.co/9mQVnSmv/Chat-GPT-Image-Jun-21-2026-12-09-59-AM.png') center/cover no-repeat;
@@ -42,16 +41,10 @@ backdrop-filter:blur(5px);
   overflow:visible;
 }
 
-.wrap{
-  position:relative;
-  z-index:2;
-  width:100%;
-  max-width:480px;
-  margin:auto;
-}
+.wrap{position:relative;z-index:2;width:100%;max-width:560px}
 .logo{text-align:center;margin-bottom:15px}
 .logo img{
-width:min(200px,70%);
+width:min(320px,85%);
 animation:glow 3s infinite alternate;
 }
 @keyframes glow{
@@ -64,7 +57,7 @@ font-size:clamp(24px,5vw,42px);
 font-weight:900;
 text-align:center;
 text-shadow:0 0 20px #ff66ff;
-margin:5px 0 10px;
+margin:10px 0 20px;
 
   text-shadow:
     0 0 5px #fff,
@@ -116,9 +109,9 @@ margin:5px 0 10px;
 
   border-radius:28px;
 
-  padding:10px;
+  padding:18px;
 
-  margin-bottom:10px;
+  margin-bottom:18px;
 
   backdrop-filter:blur(15px);
 
@@ -130,24 +123,24 @@ margin:5px 0 10px;
 .label{
 text-align:center;
 color:var(--gold);
-font-size:16px;
+font-size:22px;
 font-weight:bold;
 letter-spacing:4px;
-margin-bottom:8px;
+margin-bottom:12px;
 }
 .row{display:flex;gap:8px}
 input{
-flex:1;height:30px;border-radius:12px;
+flex:1;height:50px;border-radius:12px;
 background:#000;color:#fff;border:1px solid #fff;
 padding:12px;font-size:16px;
 }
 .btn2{
-width:80px;border-radius:12px;border:1px solid #fff;
+width:110px;border-radius:12px;border:1px solid #fff;
 background:#333;color:#fff;font-weight:bold;
 }
 .wheel-card{text-align:center;position:relative}
 .pointer{
-position:absolute;left:50%;top:45px;transform:translateX(-50%);
+position:absolute;left:50%;top:72px;transform:translateX(-50%);
 width:0;height:0;
 border-left:18px solid transparent;
 border-right:18px solid transparent;
@@ -177,20 +170,23 @@ filter:drop-shadow(0 0 10px gold);
 }
 canvas{
 width:100%;
-max-width:220px;
+max-width:380px;
 transition:transform 6s cubic-bezier(.12,.85,.12,1);
 }
 #spinBtn{
-  margin-top:10px;
+  margin-top:15px;
   width:100%;
-  height:50px;
+  height:75px;
+
   border:none;
-  border-radius:15px;
-  font-size:20px;
+  border-radius:20px;
+
+  font-size:34px;
   font-weight:900;
-  letter-spacing:1px;
+  letter-spacing:2px;
+
   color:#ffe600;
-}
+
   background:
     linear-gradient(
       180deg,
@@ -293,7 +289,7 @@ const cv=document.getElementById("wheel");
 const ctx=cv.getContext("2d");
 
 function draw(){
-  let c=200,r=165;
+  let c=200,r=190;
 
   for(let i=0;i<hadiah.length;i++){
 
@@ -311,9 +307,9 @@ function draw(){
     ctx.rotate(a+(b-a)/2);
 
     ctx.fillStyle="#fff";
-    ctx.font="bold 14px Arial";
+    ctx.font="bold 22px Arial";
     ctx.textAlign="center";
-    ctx.fillText(hadiah[i],110,5);
+    ctx.fillText(hadiah[i],130,5);
 
     ctx.restore();
   }
