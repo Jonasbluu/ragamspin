@@ -252,26 +252,22 @@ let angle = (win * sectorSize) + (sectorSize / 2);
 // sesuaikan posisi jarum atas (jam 12)
 rot += 3600 - angle - 90;
 
-cv.style.transform = `rotate(${rot}deg)`;
+  cv.style.transform = `rotate(${rot}deg)`;
 
-  cv.style.transform=`rotate(${rot}deg)`;
+setTimeout(async ()=>{
 
- setTimeout(async ()=>{
+  let hasil = hadiah[win];
 
-  let hasil=hadiah[win];
+  spinBtn.innerHTML = "CLAIM " + hasil;
 
-  // langsung tampil
-  spinBtn.innerHTML="CLAIM "+hasil;
+  pop("SELAMAT! KAMU MENDAPATKAN " + hasil);
 
-  pop("SELAMAT! KAMU MENDAPATKAN "+hasil);
+  spinBtn.disabled = false;
 
-  spinBtn.disabled=false;
-
-  spinBtn.onclick=()=>{
+  spinBtn.onclick = ()=>{
     window.location.href="https://ragam4d03.com/";
   };
 
-  // simpan di background
   fetch(API_URL,{
     method:"POST",
     body:JSON.stringify({
@@ -287,7 +283,7 @@ cv.style.transform = `rotate(${rot}deg)`;
   })
   .catch(console.error);
 
-},1200);
+},6000);
 };
 
 function warningMsg(){
