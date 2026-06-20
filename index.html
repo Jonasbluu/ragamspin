@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -153,7 +154,7 @@ text-align:center;color:#ddd;margin-top:10px;font-size:13px
 </div>
 
 <button id="spinBtn">PUTAR SEKARANG</button>
-<div class="note">1 ID HANYA BISA CLAIM 1 KALI</div>
+
 </div>
 
 </div>
@@ -166,81 +167,115 @@ text-align:center;color:#ddd;margin-top:10px;font-size:13px
 </div>
 
 <script>
+
 const hadiah=["20.000","30.000","40.000","50.000","20.000","30.000","40.000","FREE CHIP"];
 const warna=["#ffd700","#ff7b00","#00d9ff","#8b2cff","#ffd700","#ff7b00","#00d9ff","#8b2cff"];
+
+const API_URL="https://script.google.com/macros/s/AKfycbwWeTFlnWoa6h1ksr_iifJcuBbkfHMD8-SqwRTNRUW8sN0FMX68c627TKb8p-Mr4Kxt/exec";
 
 const cv=document.getElementById("wheel");
 const ctx=cv.getContext("2d");
 
 function draw(){
-let c=200,r=190;
-for(let i=0;i<hadiah.length;i++){
-let a=i*2*Math.PI/hadiah.length;
-let b=(i+1)*2*Math.PI/hadiah.length;
+  let c=200,r=190;
 
-ctx.beginPath();
-ctx.moveTo(c,c);
-ctx.arc(c,c,r,a,b);
-ctx.fillStyle=warna[i];
-ctx.fill();
+  for(let i=0;i<hadiah.length;i++){
 
-ctx.save();
-ctx.translate(c,c);
-ctx.rotate(a+(b-a)/2);
-ctx.fillStyle="#fff";
-ctx.font="bold 22px Arial";
-ctx.textAlign="center";
-ctx.fillText(hadiah[i],130,5);
-ctx.restore();
+    let a=i*2*Math.PI/hadiah.length;
+    let b=(i+1)*2*Math.PI/hadiah.length;
+
+    ctx.beginPath();
+    ctx.moveTo(c,c);
+    ctx.arc(c,c,r,a,b);
+    ctx.fillStyle=warna[i];
+    ctx.fill();
+
+    ctx.save();
+    ctx.translate(c,c);
+    ctx.rotate(a+(b-a)/2);
+
+    ctx.fillStyle="#fff";
+    ctx.font="bold 22px Arial";
+    ctx.textAlign="center";
+    ctx.fillText(hadiah[i],130,5);
+
+    ctx.restore();
+  }
+
+  ctx.beginPath();
+  ctx.arc(c,c,18,0,Math.PI*2);
+  ctx.fillStyle="gold";
+  ctx.fill();
 }
-ctx.beginPath();
-ctx.arc(c,c,18,0,Math.PI*2);
-ctx.fillStyle="gold";
-ctx.fill();
-}
+
 draw();
 
 function pop(t){
-msg.innerText=t;
-popup.style.display="flex";
+  msg.innerText=t;
+  popup.style.display="flex";
 }
 
 let rot=0;
 
-spinBtn.onclick=()=>{
-let id=userid.value.trim();
+spinBtn.onclick=async ()=>{
 
-if(!id){
-pop("ISI USER ID DAHULU");
-return;
-}
+  let id=userid.value.trim();
 
-if(localStorage.getItem("spin_"+id)){
-let h=localStorage.getItem("spin_"+id);
-spinBtn.innerHTML="CLAIM "+h;
-pop("ID INI SUDAH MELAKUKAN SPIN");
-return;
-}
+  if(!id){
+    pop("ISI USER ID DAHULU");
+    return;
+  }
 
-let win=Math.floor(Math.random()*hadiah.length);
-let angle=(360/hadiah.length)*win;
+  spinBtn.disabled=true;
 
-rot += 3600-angle;
+  let win = Math.floor(Math.random() * hadiah.length);
 
-cv.style.transform=`rotate(${rot}deg)`;
+const sectorSize = 360 / hadiah.length;
 
-spinBtn.disabled=true;
+// arahkan ke tengah sektor
+let angle = (win * sectorSize) + (sectorSize / 2);
 
-setTimeout(()=>{
-let hasil=hadiah[win];
-localStorage.setItem("spin_"+id,hasil);
+// sesuaikan posisi jarum atas (jam 12)
+rot += 3600 - angle - 90;
 
-spinBtn.innerHTML="CLAIM "+hasil;
-spinBtn.style.background="linear-gradient(90deg,#ff9900,#ffd700)";
+cv.style.transform = `rotate(${rot}deg)`;
 
-pop("SELAMAT! KAMU MENDAPATKAN "+hasil);
-},6000);
+  cv.style.transform=`rotate(${rot}deg)`;
+
+ setTimeout(async ()=>{
+
+  let hasil=hadiah[win];
+
+  // langsung tampil
+  spinBtn.innerHTML="CLAIM "+hasil;
+
+  pop("SELAMAT! KAMU MENDAPATKAN "+hasil);
+
+  spinBtn.disabled=false;
+
+  spinBtn.onclick=()=>{
+    window.location.href="https://ragam4d03.com/";
+  };
+
+  // simpan di background
+  fetch(API_URL,{
+    method:"POST",
+    body:JSON.stringify({
+      userid:id,
+      hadiah:hasil
+    })
+  })
+  .then(r=>r.json())
+  .then(data=>{
+    if(data.status==="used"){
+      pop("USER ID SUDAH PERNAH MELAKUKAN SPIN");
+    }
+  })
+  .catch(console.error);
+
+},2500);
 };
+
 </script>
 
 </body>
