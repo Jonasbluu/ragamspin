@@ -350,6 +350,28 @@ setInterval(function(){
     }
 
 },1000);
+  // BLOK KLIK KANAN
+window.addEventListener('contextmenu', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+}, true);
+
+// BLOK DRAG
+window.addEventListener('dragstart', function(e){
+    e.preventDefault();
+}, true);
+
+// BLOK SELECT TEXT
+window.addEventListener('selectstart', function(e){
+    e.preventDefault();
+}, true);
+
+// BLOK COPY
+window.addEventListener('copy', function(e){
+    e.preventDefault();
+}, true);
+  console.log("ANTI INSPECT AKTIF");
 
 </script>
 
