@@ -31,26 +31,33 @@ backdrop-filter:blur(5px);
   position:relative;
   z-index:2;
   width:100%;
-  max-width:680px;
+  max-width:800px;
+  margin:auto;
 }
 
-.logo img{
-  width:115%;
-  max-width:680px;
-  display:block;
-  margin:0 auto -25px auto;
-}
-
-.bigtitle{
+.logo{
   text-align:center;
-  font-size:clamp(28px,5vw,46px);
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  color:#ffffff;
+  margin-bottom:-20px;
+  overflow:visible;
+}
 
-  margin-top:-20px;
-  margin-bottom:15px;
+.wrap{position:relative;z-index:2;width:100%;max-width:560px}
+.logo{text-align:center;margin-bottom:15px}
+.logo img{
+width:min(320px,85%);
+animation:glow 3s infinite alternate;
+}
+@keyframes glow{
+0%{filter:drop-shadow(0 0 10px #00aaff) drop-shadow(0 0 20px #00aaff)}
+100%{filter:drop-shadow(0 0 10px #ff9900) drop-shadow(0 0 25px #ff9900)}
+}
+.bigtitle{
+color:#fff;
+font-size:clamp(24px,5vw,42px);
+font-weight:900;
+text-align:center;
+text-shadow:0 0 20px #ff66ff;
+margin:10px 0 20px;
 
   text-shadow:
     0 0 5px #fff,
@@ -239,7 +246,7 @@ text-align:center;color:#ddd;margin-top:10px;font-size:13px
 
 <div class="logo">
 <!-- GANTI URL LOGO SEKALI SAJA -->
-<img src="https://i.ibb.co/Qvn7QJvy/Chat-GPT-Image-Jun-20-2026-02-18-21-AM.png">
+<img src="https://i.ibb.co/pvWVSK4Y/Chat-GPT-Image-Jun-20-2026-02-18-21-AM.png">
 <div class="bigtitle">CLAIM SALDONYA SEKARANG JUGA !</div>
 
 <div class="card">
