@@ -276,49 +276,56 @@ cv.style.transform = `rotate(${rot}deg)`;
 },2500);
 };
 
+function warningMsg(){
+pop("HEY! MAU NGAPAIN KAMU? 😎");
+}
+
 // ===== BLOK KLIK KANAN =====
 document.addEventListener('contextmenu', function(e){
-    e.preventDefault();
+e.preventDefault();
+warningMsg();
 });
+
 
 // ===== BLOK SHORTCUT DEVTOOLS =====
 document.addEventListener('keydown', function(e){
 
     // F12
-    if(e.key === 'F12'){
-        e.preventDefault();
-        return false;
-    }
+  if(e.key === 'F12'){
+e.preventDefault();
+warningMsg();
+return false;
+}
 
-    // Ctrl+Shift+I
     if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i'){
-        e.preventDefault();
-        return false;
-    }
+e.preventDefault();
+warningMsg();
+return false;
+}
 
-    // Ctrl+Shift+J
-    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j'){
-        e.preventDefault();
-        return false;
-    }
+   if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j'){
+e.preventDefault();
+warningMsg();
+return false;
+}
+  
+   if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c'){
+e.preventDefault();
+warningMsg();
+return false;
+}
+  
+if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'u'){
+e.preventDefault();
+warningMsg();
+return false;
+}
 
-    // Ctrl+Shift+C
-    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c'){
-        e.preventDefault();
-        return false;
-    }
-
-    // Ctrl+U
-    if(e.ctrlKey && e.key.toLowerCase() === 'u'){
-        e.preventDefault();
-        return false;
-    }
-
-    // Ctrl+S
-    if(e.ctrlKey && e.key.toLowerCase() === 's'){
-        e.preventDefault();
-        return false;
-    }
+if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 's'){
+e.preventDefault();
+warningMsg();
+return false;
+}
 
 });
 
