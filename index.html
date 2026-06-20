@@ -20,46 +20,47 @@ min-height:100vh;
 padding:20px;
 display:flex;
 justify-content:center;
-background:url('https://i.ibb.co/TqHJHwMt/0b2c821e-36bf-41ad-8ed7-adc500d06a72.png') center/cover no-repeat;
+background:url('https://i.ibb.co/R4QWcWTw/kiwkiw.png') center/cover no-repeat;
 }
 body:before{
 content:'';position:fixed;inset:0;
-background:rgba(0,0,0,.55);
+background:rgba(0,0,0,.25);
 backdrop-filter:blur(5px);
 }
 .wrap{position:relative;z-index:2;width:100%;max-width:560px}
-.logo{text-align:center;margin-bottom:15px}
+.logo{
+  text-align:center;
+  margin-bottom:0;
+}
+
 .logo img{
-width:min(320px,85%);
-animation:glow 3s infinite alternate;
+  width:min(320px,85%);
+  display:block;
+  margin:0 auto;
 }
-@keyframes glow{
-0%{filter:drop-shadow(0 0 10px #00aaff) drop-shadow(0 0 20px #00aaff)}
-100%{filter:drop-shadow(0 0 10px #ff9900) drop-shadow(0 0 25px #ff9900)}
-}
+
 .bigtitle{
-color:#fff;
-font-size:clamp(24px,5vw,42px);
-font-weight:900;
-text-align:center;
-text-shadow:0 0 20px #ff66ff;
-margin:10px 0 20px;
+  margin:-8px 0 10px;
+  line-height:1.1;
 }
 .card{
-  background:linear-gradient(
-    135deg,
-    rgba(20,20,40,.75),
-    rgba(80,20,120,.45)
-  );
-  backdrop-filter:blur(18px);
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:32px;
+  position:relative;
+
+  background:rgba(15,10,35,.65);
+
+  border:2px solid rgba(180,120,255,.5);
+
+  border-radius:28px;
+
   padding:18px;
+
   margin-bottom:18px;
 
+  backdrop-filter:blur(18px);
+
   box-shadow:
-    0 0 20px rgba(0,217,255,.25),
-    0 0 40px rgba(139,44,255,.20),
+    0 0 10px rgba(150,80,255,.5),
+    0 0 25px rgba(0,180,255,.3),
     inset 0 0 20px rgba(255,255,255,.05);
 }
 .label{
