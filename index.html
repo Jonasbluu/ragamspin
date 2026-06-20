@@ -290,42 +290,45 @@ warningMsg();
 // ===== BLOK SHORTCUT DEVTOOLS =====
 document.addEventListener('keydown', function(e){
 
-    // F12
-  if(e.key === 'F12'){
-e.preventDefault();
-warningMsg();
-return false;
-}
+   document.addEventListener('keydown', function(e){
+
+    if(e.key === 'F12'){
+        e.preventDefault();
+        warningMsg();
+        return false;
+    }
 
     if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i'){
-e.preventDefault();
-warningMsg();
-return false;
-}
+        e.preventDefault();
+        warningMsg();
+        return false;
+    }
 
-   if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j'){
-e.preventDefault();
-warningMsg();
-return false;
-}
-  
-   if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c'){
-e.preventDefault();
-warningMsg();
-return false;
-}
-  
-if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'u'){
-e.preventDefault();
-warningMsg();
-return false;
-}
+    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j'){
+        e.preventDefault();
+        warningMsg();
+        return false;
+    }
 
-if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 's'){
-e.preventDefault();
-warningMsg();
-return false;
-}
+    if(e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c'){
+        e.preventDefault();
+        warningMsg();
+        return false;
+    }
+
+    // CTRL + U
+    if(e.ctrlKey && e.key.toLowerCase() === 'u'){
+        e.preventDefault();
+        warningMsg();
+        return false;
+    }
+
+    // CTRL + S
+    if(e.ctrlKey && e.key.toLowerCase() === 's'){
+        e.preventDefault();
+        warningMsg();
+        return false;
+    }
 
 });
 
